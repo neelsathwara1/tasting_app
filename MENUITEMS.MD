@@ -1,40 +1,40 @@
 # Mocktails
 - Mojito
-- Orange Martina
-- Black Currant Shanshai
+- Orange Martini
+- Black Currant Shanghai
 - Blue Ocean
 - Cranberry
-- Strawberry Margerita
-- Lychee Shanshai
+- Strawberry Margarita
+- Lychee Shanghai
 - Rose Tender
 - Jeera Cooler
-- Kiwi Martina
+- Kiwi Martini
 - Green Apple
-- Khus Fantacy
+- Khus Fantasy
 - Blackberry
 - Summer Cooler
-- Rasberry Lemon
-- Margerita
-- Blueberry Margerita
+- Raspberry Lemon
+- Margarita
+- Blueberry Margarita
 - Virgin Sangria
 - Cranberry Mojito
-- Lychee Panch
+- Lychee Punch
 - Lemon Jeera
 - Rosemary
 - Strawberry Summer Cooler
-- Jeera Fantacy
+- Jeera Fantasy
 - Orange Summer Cooler
 
 # JUICES
 - World Vision
 - Pahadi Juice
-- Cindrella Juice
+- Cinderella Juice
 - Peru Plaza
 - Fantasy
-- Orange Besil
+- Orange Basil
 - Kiwi Pineapple
-- Ginger 2
-- All rounder
+- Ginger Juice
+- All-rounder
 
 # FL. Starter
 - Veg. Cigar Roll with Mayo Dips
@@ -43,29 +43,29 @@
 - Cheese Paneer Ball with Mayo Dips
 
 # Hot Appetizers
-- Khau Suey Soup with Siders
+- Khau Suey Soup with Sides
 - Lemon Coriander Soup
-- Manchow Soupm with Chop Suey
-- Ministrone Soup with Maccaroni
+- Manchow Soup with Chop Suey
+- Minestrone Soup with Macaroni
 
 # Chaat Items
 - Tikki Based Chaat
 - Dry Fruit Makhana Chaat
-- Rasile Dahi Bhalle
+- Rassile Dahi Bhalla
 - Palak Patta Kurkure Chaat
 
 # SOUTH INDIAN
 - Masala Dosa
-- Maisur Masala Dosa
+- Mysore Masala Dosa
 - Green Garlic Khakhra Dosa
-- Gotala Paper Dosa
+- Ghotala Paper Dosa
 - Cheese Palak Dosa
 - Khakhra Dosa
 - Jini Roll Dosa
 - Schezwan Dosa
 - Methi Khakhra Dosa
 - Dilkhush Dosa
-- Chocalate Paper Dosa
+- Chocolate Paper Dosa
 - Pizza Paper Dosa
 
 # Italian Items
@@ -80,9 +80,9 @@
 
 # SALAD BAR
 - Sweet Pickle
-- Limbu Pickle
-- Mix Pickle
-- Bombay Hot salad
+- Nimbu Pickle
+- Mixed Pickle
+- Bombay Hot Salad
 - Green Salad
 - Cream Salad
 - Russian Salad
@@ -90,22 +90,23 @@
 - Onion & Lemon
 - Kimchi Salad
 - Spicy Guava & Strawberry
-- Cheese, Cherry, Pineapple
+- Cheese, Cherry & Pineapple
+- Italian Beans Salad 
 
 # Sweet Counter
 ## Liquid Sweets
 - Litchi Gulla
-- Kesar Mataki (Basundi in Mataki)
+- Kesar Matki
 - Coconut Tender in Kullad
 - Malai Chena Roll
-- Red Valvet Basundi 
+- Red Velvet Basundi 
 - Mawa Badam
 ## Hot Sweet
 - Live Dry Fruit Halwa
 - Traditional Ghevar (Plain & Malai)
 - Badam Barbeque
-- Malai Kesar Cham Cham (Bengoli)
-- Kiwi Sandwich (Bengoli)
+- Malai Kesar Cham Cham
+- Kiwi Sandwich
 - Badam Pizza (Malai, Rose, Fruit)
 
 # Main Course
@@ -116,18 +117,19 @@
 - Cheese Angoori
 
 # Roti
-- Fulka Roti
-- Tandoor Roti
+- Phulka Roti
+- Tandoori Roti
 - Baby Naan & Garlic Naan
 - Lachha Paratha
 - Missi Roti
-- Stuff Kulcha
+- Stuffed Kulcha
 
 
 # Dal & Rice
 - Dal Tadka with Jeera Coriander Rice
-- Dal Makhani with Greecy Rice
+- Dal Makhani with Greasy Rice
 - Dum Biryani with Raita
+- Handi Dal Rice
 
 # Dessert
 ## ice creams
@@ -136,7 +138,7 @@
 - Golden Pearl Ice Cream
 - Almond Carnival Ice Cream
 - Pistachio Ice Cream
-- Belgiam Choclate Ice Cream
+- Belgian Chocolate Ice Cream
 ## Live Kulfi 
 - Jamun Flavour
 - Rajbhog
@@ -144,12 +146,12 @@
 ## Roll Cuts 
 - Raja Rani
 - Afghan Cassata
-- Two in One Cassata
+- Two-in-One Cassata
 ## Sandwich Ice Cream
 - Rajbhog
-- Chocalate
+- Chocolate
 
 # Others
-- Mouth Freshner
-- Roasted papad
+- Mouth Freshener
+- Roasted Papad
 - Water Bottle

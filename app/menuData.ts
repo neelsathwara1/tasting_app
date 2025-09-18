@@ -14,18 +14,18 @@ export const eventMenu: MenuSection[] = [
   {
     category: "Mocktails",
     items: [
-      "Mojito", "Orange Martina", "Black Currant Shanshai", "Blue Ocean", "Cranberry", 
-      "Strawberry Margerita", "Lychee Shanshai", "Rose Tender", "Jeera Cooler", "Kiwi Martina", 
-      "Green Apple", "Khus Fantacy", "Blackberry", "Summer Cooler", "Rasberry Lemon", 
-      "Margerita", "Blueberry Margerita", "Virgin Sangria", "Cranberry Mojito", "Lychee Panch", 
-      "Lemon Jeera", "Rosemary", "Strawberry Summer Cooler", "Jeera Fantacy", "Orange Summer Cooler"
+      "Mojito", "Orange Martini", "Black Currant Shanghai", "Blue Ocean", "Cranberry", 
+      "Strawberry Margarita", "Lychee Shanghai", "Rose Tender", "Jeera Cooler", "Kiwi Martini", 
+      "Green Apple", "Khus Fantasy", "Blackberry", "Summer Cooler", "Raspberry Lemon", 
+      "Margarita", "Blueberry Margarita", "Virgin Sangria", "Cranberry Mojito", "Lychee Punch", 
+      "Lemon Jeera", "Rosemary", "Strawberry Summer Cooler", "Jeera Fantasy", "Orange Summer Cooler"
     ]
   },
   {
     category: "JUICES",
     items: [
-      "World Vision", "Pahadi Juice", "Cindrella Juice", "Peru Plaza", "Fantasy", 
-      "Orange Besil", "Kiwi Pineapple", "Ginger 2", "All rounder"
+      "World Vision", "Pahadi Juice", "Cinderella Juice", "Peru Plaza", "Fantasy", 
+      "Orange Basil", "Kiwi Pineapple", "Ginger Juice", "All-rounder"
     ]
   },
   {
@@ -38,23 +38,23 @@ export const eventMenu: MenuSection[] = [
   {
     category: "Hot Appetizers",
     items: [
-      "Khau Suey Soup with Siders", "Lemon Coriander Soup", "Manchow Soupm with Chop Suey", 
-      "Ministrone Soup with Maccaroni"
+      "Khau Suey Soup with Sides", "Lemon Coriander Soup", "Manchow Soup with Chop Suey", 
+      "Minestrone Soup with Macaroni"
     ]
   },
   {
     category: "Chaat Items",
     items: [
-      "Tikki Based Chaat", "Dry Fruit Makhana Chaat", "Rasile Dahi Bhalle", 
+      "Tikki Based Chaat", "Dry Fruit Makhana Chaat", "Rassile Dahi Bhalla", 
       "Palak Patta Kurkure Chaat"
     ]
   },
   {
     category: "SOUTH INDIAN",
     items: [
-      "Masala Dosa", "Maisur Masala Dosa", "Green Garlic Khakhra Dosa", "Gotala Paper Dosa", 
+      "Masala Dosa", "Mysore Masala Dosa", "Green Garlic Khakhra Dosa", "Ghotala Paper Dosa", 
       "Cheese Palak Dosa", "Khakhra Dosa", "Jini Roll Dosa", "Schezwan Dosa", 
-      "Methi Khakhra Dosa", "Dilkhush Dosa", "Chocalate Paper Dosa", "Pizza Paper Dosa"
+      "Methi Khakhra Dosa", "Dilkhush Dosa", "Chocolate Paper Dosa", "Pizza Paper Dosa"
     ]
   },
   {
@@ -72,9 +72,9 @@ export const eventMenu: MenuSection[] = [
   {
     category: "SALAD BAR",
     items: [
-      "Sweet Pickle", "Limbu Pickle", "Mix Pickle", "Bombay Hot salad", "Green Salad", 
+      "Sweet Pickle", "Nimbu Pickle", "Mixed Pickle", "Bombay Hot Salad", "Green Salad", 
       "Cream Salad", "Russian Salad", "Macaroni Salad", "Onion & Lemon", "Kimchi Salad", 
-      "Spicy Guava & Strawberry", "Cheese, Cherry, Pineapple"
+      "Spicy Guava & Strawberry", "Cheese, Cherry & Pineapple", "Italian Beans Salad"
     ]
   },
   {
@@ -83,15 +83,15 @@ export const eventMenu: MenuSection[] = [
       {
         subgroup: "Liquid Sweets",
         items: [
-          "Litchi Gulla", "Kesar Mataki (Basundi in Mataki)", "Coconut Tender in Kullad", 
-          "Malai Chena Roll", "Red Valvet Basundi", "Mawa Badam"
+          "Litchi Gulla", "Kesar Matki", "Coconut Tender in Kullad", 
+          "Malai Chena Roll", "Red Velvet Basundi", "Mawa Badam"
         ]
       },
       {
         subgroup: "Hot Sweet",
         items: [
           "Live Dry Fruit Halwa", "Traditional Ghevar (Plain & Malai)", "Badam Barbeque", 
-          "Malai Kesar Cham Cham (Bengoli)", "Kiwi Sandwich (Bengoli)", "Badam Pizza (Malai, Rose, Fruit)"
+          "Malai Kesar Cham Cham", "Kiwi Sandwich", "Badam Pizza (Malai, Rose, Fruit)"
         ]
       }
     ]
@@ -105,15 +105,15 @@ export const eventMenu: MenuSection[] = [
   {
     category: "Roti",
     items: [
-      "Fulka Roti", "Tandoor Roti", "Baby Naan & Garlic Naan", "Lachha Paratha", 
-      "Missi Roti", "Stuff Kulcha"
+      "Phulka Roti", "Tandoori Roti", "Baby Naan & Garlic Naan", "Lachha Paratha", 
+      "Missi Roti", "Stuffed Kulcha"
     ]
   },
   {
     category: "Dal & Rice",
     items: [
-      "Dal Tadka with Jeera Coriander Rice", "Dal Makhani with Greecy Rice", 
-      "Dum Biryani with Raita"
+      "Dal Tadka with Jeera Coriander Rice", "Dal Makhani with Greasy Rice", 
+      "Dum Biryani with Raita", "Handi Dal Rice"
     ]
   },
   {
@@ -123,7 +123,7 @@ export const eventMenu: MenuSection[] = [
         subgroup: "ice creams",
         items: [
           "Rajbhog Ice Cream", "Blue Diamond Ice Cream", "Golden Pearl Ice Cream", 
-          "Almond Carnival Ice Cream", "Pistachio Ice Cream", "Belgiam Choclate Ice Cream"
+          "Almond Carnival Ice Cream", "Pistachio Ice Cream", "Belgian Chocolate Ice Cream"
         ]
       },
       {
@@ -135,13 +135,13 @@ export const eventMenu: MenuSection[] = [
       {
         subgroup: "Roll Cuts",
         items: [
-          "Raja Rani", "Afghan Cassata", "Two in One Cassata"
+          "Raja Rani", "Afghan Cassata", "Two-in-One Cassata"
         ]
       },
       {
         subgroup: "Sandwich Ice Cream",
         items: [
-          "Rajbhog", "Chocalate"
+          "Rajbhog", "Chocolate"
         ]
       }
     ]
@@ -149,7 +149,7 @@ export const eventMenu: MenuSection[] = [
   {
     category: "Others",
     items: [
-      "Roasted papad", "Mouth Freshner", "Water Bottle"
+      "Mouth Freshener", "Roasted Papad", "Water Bottle"
     ]
   }
 ];
