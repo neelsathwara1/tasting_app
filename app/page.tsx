@@ -135,6 +135,16 @@ const SearchableMultiSelect: React.FC<SearchableMultiSelectProps> = ({ options, 
               <li className="px-3 py-2 text-sm text-yellow-200/70 text-center" role="option" aria-disabled="true">No results found</li>
             )}
           </ul>
+          {/* Done button to close dropdown */}
+          <div className="border-t border-yellow-800/40 p-2">
+            <button
+              type="button"
+              onClick={() => setIsOpen(false)}
+              className="w-full px-3 py-2 text-sm bg-yellow-600 hover:bg-yellow-700 text-[#42211c] rounded-md font-medium transition-colors"
+            >
+              Done ({selectedValues.length} selected)
+            </button>
+          </div>
         </div>
       )}
     </div>
@@ -256,11 +266,13 @@ export default function HomePage() {
         ></div>
         
         <header className="p-4 border-b border-yellow-800/40 sticky top-0 bg-[#52302c]/80 backdrop-blur-sm z-50">
-          <nav className="container mx-auto flex justify-between items-center">
-            <div className="text-xl font-bold text-yellow-400 tracking-wider font-serif">Rahul Caterers tasting event</div>
-            <div><a href="#custom-menu" className="text-yellow-200 hover:text-yellow-400 transition-colors">Create your menu</a></div>
+          <nav className="container mx-auto flex justify-center items-center">
+            <div className="text-xl font-bold text-yellow-400 tracking-wider font-serif text-center">
+              Rahul Caterer's Tasting Event
+            </div>
           </nav>
         </header>
+
 
         <main className="container mx-auto px-4 py-16 sm:py-24 max-w-7xl">
           {/* Hero Content */}
@@ -276,7 +288,7 @@ export default function HomePage() {
           {/* Hardcoded Menu Section */}
           <section id="menu" className="mb-20">
               <div className="text-center mb-12">
-                  <h2 className="text-4xl font-serif text-yellow-300">Our Grand Menu</h2>
+                  <h2 className="text-4xl font-serif text-yellow-300">Our Menu</h2>
                   <p className="text-yellow-200/70 mt-2">A culinary journey through our curated selections</p>
               </div>
               
@@ -316,13 +328,13 @@ export default function HomePage() {
                         Your culinary preferences have been received with great enthusiasm! 
                     </p>
                     <p className="text-lg text-yellow-200/80 max-w-2xl mx-auto">
-                        We're excited to prepare a personalized tasting experience just for you. Our chef will carefully craft each dish you've selected to ensure an unforgettable gastronomic journey.
+                        We're excited to prepare a personalized tasting experience just for you. Our chef will carefully craft each dish you've selected to ensure an unforgettable delightful journey.
                     </p>
                     <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-6 max-w-2xl mx-auto mt-8">
                         <p className="text-yellow-200/90">
                             <strong className="text-yellow-300">What's Next?</strong><br/>
-                            You'll receive a confirmation email shortly with event details and timing. 
-                            We can't wait to see you at our tasting event!
+                            Thank you for being a valued guest at our tasting event.
+                            You'll receive a callback for your inquiry soon!!!
                         </p>
                     </div>
                 </div>
@@ -385,8 +397,9 @@ export default function HomePage() {
 
         <footer className="border-t border-yellow-800/40 py-6 mt-20">
           <div className="container mx-auto text-center text-yellow-200/60 text-sm space-y-2">
-              <p>Event Organizer: Rajan Sharma | For inquiries, call: +91 98765 43210</p>
-              <p>&copy; {new Date().getFullYear()} The Royal Palate. All Rights Reserved.</p>
+              <p>Event Organizer: Rahul Machhi </p>
+              <p>For inquiries, call: +91 85307 07029</p>
+              <p>&copy; {new Date().getFullYear()} Rahul Caterers. All Rights Reserved.</p>
           </div>
         </footer>
       </div>

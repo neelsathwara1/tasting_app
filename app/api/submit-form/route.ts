@@ -36,11 +36,21 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     
-    // Save to MongoDB
+    // Save to MongoDB with better error handling
+    console.log('Attempting to connect to MongoDB...');
     const client = await clientPromise;
+    console.log('MongoDB connection successful');
+    
     const db = client.db();
     const collection = db.collection('inquiries');
-    const result = await collection.insertOne(body);
+    
+    console.log('Inserting document into MongoDB...');
+    const result = await collection.insertOne({
+      ...body,
+      submittedAt: new Date(),
+      ip: request.headers.get('x-forwarded-for') || 'unknown'
+    });
+    console.log('Document inserted successfully:', result.insertedId);
     
     // Send WhatsApp message
     try {

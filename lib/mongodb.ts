@@ -5,8 +5,11 @@ const options = {
   tls: true,
   tlsAllowInvalidCertificates: false,
   tlsAllowInvalidHostnames: false,
-  serverSelectionTimeoutMS: 5000,
-  connectTimeoutMS: 10000,
+  serverSelectionTimeoutMS: 30000, // Increased to 30 seconds
+  connectTimeoutMS: 30000, // Increased to 30 seconds
+  socketTimeoutMS: 30000,
+  maxPoolSize: 10,
+  retryWrites: true,
 };
 
 let client;
