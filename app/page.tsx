@@ -337,7 +337,7 @@ export default function HomePage() {
           <section id="menu" className="mb-20">
               <div className="text-center mb-12 relative">
                   <h2 className="text-4xl font-serif text-golden-700 drop-shadow-sm">Prepared with Passion, Delivered With Pride</h2>
-                  <p className="text-3xl font-serif text-golden-700 mt-2"><strong>Our Signature Menu</strong></p>
+                  <p className="text-3xl font-serif text-golden-700 mt-2 m-6"><strong>Our Signature Menu</strong></p>
               </div>
               
               <div className="max-w-4xl mx-auto bg-white/20 backdrop-blur-lg border border-white/30 rounded-xl shadow-2xl p-8 sm:p-12">
