@@ -15,6 +15,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Rahul Caterers - Food Tasting Event Invitation",
   description: "Join Rahul Caterers for an exclusive food tasting event. Sample our signature dishes and experience authentic flavors crafted with passion and tradition.",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
 };
 
 export default function RootLayout({

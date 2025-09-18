@@ -64,6 +64,13 @@ const SearchableMultiSelect: React.FC<SearchableMultiSelectProps> = ({ options, 
     function handleClickOutside(event: Event) {
       if (wrapperRef.current && event.target instanceof Node && !wrapperRef.current.contains(event.target)) {
         setIsOpen(false);
+        // Reset viewport zoom on mobile
+        if (window.innerWidth < 768) {
+          const viewport = document.querySelector('meta[name=viewport]');
+          if (viewport) {
+            viewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
+          }
+        }
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
@@ -104,7 +111,8 @@ const SearchableMultiSelect: React.FC<SearchableMultiSelectProps> = ({ options, 
           value={searchTerm}
           onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}
           onFocus={() => setIsOpen(true)}
-          className="flex-grow bg-transparent outline-none text-warm-brown-800 placeholder-warm-brown-400"
+          className="flex-grow bg-transparent outline-none text-warm-brown-800 placeholder-warm-brown-400 text-base"
+          style={{ fontSize: '16px' }}
           aria-label={placeholder}
           aria-autocomplete="list"
         />
@@ -137,7 +145,16 @@ const SearchableMultiSelect: React.FC<SearchableMultiSelectProps> = ({ options, 
           <div className="border-t border-golden-200 p-2">
             <button
               type="button"
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                setIsOpen(false);
+                // Reset viewport zoom on mobile
+                if (window.innerWidth < 768) {
+                  const viewport = document.querySelector('meta[name=viewport]');
+                  if (viewport) {
+                    viewport.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
+                  }
+                }
+              }}
               className="w-full px-3 py-2 text-sm bg-golden-400 hover:bg-golden-500 text-warm-brown-800 rounded-md font-medium transition-colors"
             >
               Done ({selectedValues.length} selected)
