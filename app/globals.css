@@ -27,8 +27,8 @@ body {
 .text-golden-700 { color: #7D5E07; }
 .text-golden-800 { color: #614A05; }
 .text-warm-brown-400 { color: #A0926B; }
-.text-warm-brown-500 { color: #8B7A56; }
-.text-warm-brown-600 { color: #6B5B3F; }
+.text-warm-brown-500 { color: #6B5B3F; } /* Darker for better contrast */
+.text-warm-brown-600 { color: #5A4D35; } /* Even darker */
 .text-warm-brown-700 { color: #4A3B2A; }
 .text-warm-brown-800 { color: #3A2E1F; }
 .text-warm-brown-900 { color: #2A1F15; }
@@ -38,6 +38,8 @@ body {
 .bg-golden-500 { background-color: #B8860B; }
 .bg-golden-600 { background-color: #9A7209; }
 .bg-golden-700 { background-color: #7D5E07; }
+
+.bg-warm-brown-700 { background-color: #4A3B2A; }
 
 .from-golden-400 { --tw-gradient-from: #D4AF37; }
 .from-golden-500 { --tw-gradient-from: #B8860B; }

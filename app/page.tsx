@@ -93,9 +93,9 @@ const SearchableMultiSelect: React.FC<SearchableMultiSelectProps> = ({ options, 
         aria-label={placeholder}
       >
         {selectedValues.map((value: string) => (
-          <span key={value} className="flex items-center gap-1.5 bg-warm-brown-700 text-cream-50 text-xs font-medium px-2 py-1 rounded" aria-label={`Selected: ${value}`}> 
+          <span key={value} className="flex items-center gap-1.5 bg-golden-700 text-white text-xs font-medium px-2 py-1 rounded" aria-label={`Selected: ${value}`}> 
             {value}
-            <button onClick={() => handleRemove(value)} type="button" className="text-cream-100 hover:text-white" aria-label={`Remove ${value}`}>×</button>
+            <button onClick={() => handleRemove(value)} type="button" className="text-white hover:text-gray-200 ml-1" aria-label={`Remove ${value}`}>×</button>
           </span>
         ))}
         <input
@@ -260,9 +260,10 @@ export default function HomePage() {
             backgroundImage: "linear-gradient(135deg, rgba(245, 240, 232, 1) 0%, rgba(240, 230, 210, 1) 25%, rgba(232, 213, 183, 1) 50%, rgba(225, 200, 165, 1) 100%)",
             opacity: 0.3
           }}
+          aria-hidden="true"
         ></div>
         
-                <header className="p-4 border-b-2 border-golden-400 sticky top-0 bg-cream-50/95 backdrop-blur-md z-50 shadow-lg">
+                <header className="p-4 border-b-2 border-golden-400 sticky top-0 bg-cream-50 z-50 shadow-lg">
           <nav className="container mx-auto flex justify-center items-center">
             <div className="flex items-center space-x-4">
               <img src="/rahul-caterers-logo.png" alt="Rahul Caterers Logo" className="h-12 w-auto" />
@@ -322,7 +323,7 @@ export default function HomePage() {
                     </p>
                     <p className="text-lg font-sans-serif text-warm-brown-700">
                         <strong>
-                        M : 99255 54186, 98255 67629, 85307 07029</strong>
+                        M : 99255 54186, 98255 67629, <br />85307 07029</strong>
                     </p>
                 </div>
                 
@@ -447,7 +448,7 @@ export default function HomePage() {
                 />
               </div>
               <p className="font-semibold text-golden-700">Rahul Caterers</p>
-              <p>Contact: +91 85307 07029</p>
+              <p>Contact: +91 99255 54186 / +91 98255 67629 / +91 85307 07029</p>
               <p className="text-xs text-warm-brown-400 mt-4">&copy; {new Date().getFullYear()} Rahul Caterers. All Rights Reserved.</p>
           </div>
         </footer>
