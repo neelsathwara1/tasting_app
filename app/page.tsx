@@ -12,7 +12,11 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> { class
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> { children: ReactNode; className?: string; }
 
 interface SearchableMultiSelectProps {
-  options: string[];
+  section: {
+    category: string;
+    items?: string[];
+    subgroups?: { subgroup: string; items: string[] }[];
+  };
   selectedValues: string[];
   onChange: (newSelection: string[]) => void;
   placeholder: string;
@@ -54,11 +58,25 @@ const Button: React.FC<ButtonProps> = ({ children, className = '', ...props }) =
   >
     {children}
   </button>
-);// --- New Searchable Multi-Select Component ---
-const SearchableMultiSelect: React.FC<SearchableMultiSelectProps> = ({ options, selectedValues, onChange, placeholder }) => {
+);// --- New Hierarchical Searchable Multi-Select Component ---
+const SearchableMultiSelect: React.FC<SearchableMultiSelectProps> = ({ section, selectedValues, onChange, placeholder }) => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
+
+  // Flatten all options from the section
+  const getAllOptions = () => {
+    const options: string[] = [];
+    if (section.items) {
+      options.push(...section.items);
+    }
+    if (section.subgroups) {
+      section.subgroups.forEach(subgroup => {
+        options.push(...subgroup.items);
+      });
+    }
+    return options;
+  };
 
   useEffect(() => {
     function handleClickOutside(event: Event) {
@@ -88,9 +106,11 @@ const SearchableMultiSelect: React.FC<SearchableMultiSelectProps> = ({ options, 
     onChange(selectedValues.filter((item: string) => item !== valueToRemove));
   };
 
-  const filteredOptions = options.filter((option: string) =>
-    option.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filterItems = (items: string[]) => {
+    return items.filter((item: string) =>
+      item.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  };
 
   return (
     <div className="relative" ref={wrapperRef}>
@@ -119,28 +139,72 @@ const SearchableMultiSelect: React.FC<SearchableMultiSelectProps> = ({ options, 
       </div>
       {isOpen && (
         <div className="absolute z-10 w-full mt-1 bg-cream-50 border border-golden-400 rounded-md shadow-lg max-h-60 overflow-auto">
-          <ul className="py-1" role="listbox">
-            {filteredOptions.length > 0 ? filteredOptions.map((option: string, idx: number) => (
-              <li
-                key={option}
-                className={`px-3 py-2 cursor-pointer text-sm text-warm-brown-800 hover:bg-cream-200 flex items-center justify-between ${selectedValues.includes(option) ? 'font-semibold bg-golden-300' : ''}`}
-                onClick={() => handleSelect(option)}
-                tabIndex={0}
-                role="option"
-                aria-selected={selectedValues.includes(option)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    handleSelect(option);
-                  }
-                }}
-              >
-                {option}
-                {selectedValues.includes(option) && <span className="text-golden-700">✓</span>}
-              </li>
-            )) : (
-              <li className="px-3 py-2 text-sm text-warm-brown-400 text-center" role="option" aria-disabled="true">No results found</li>
+          <div className="py-1">
+            {/* Render direct items first (if any) */}
+            {section.items && filterItems(section.items).length > 0 && (
+              <div>
+                {filterItems(section.items).map((option: string) => (
+                  <div
+                    key={option}
+                    className={`px-3 py-2 cursor-pointer text-sm text-warm-brown-800 hover:bg-cream-200 flex items-center justify-between ${selectedValues.includes(option) ? 'font-semibold bg-golden-300' : ''}`}
+                    onClick={() => handleSelect(option)}
+                    tabIndex={0}
+                    role="option"
+                    aria-selected={selectedValues.includes(option)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        handleSelect(option);
+                      }
+                    }}
+                  >
+                    {option}
+                    {selectedValues.includes(option) && <span className="text-golden-700">✓</span>}
+                  </div>
+                ))}
+              </div>
             )}
-          </ul>
+            
+            {/* Render subgroups (if any) */}
+            {section.subgroups && section.subgroups.map((subgroup) => {
+              const filteredSubgroupItems = filterItems(subgroup.items);
+              if (filteredSubgroupItems.length === 0) return null;
+              
+              return (
+                <div key={subgroup.subgroup} className="border-t border-golden-200 mt-1 pt-1">
+                  <div className="px-3 py-1 text-xs font-semibold text-golden-800 bg-golden-100 uppercase tracking-wide">
+                    {subgroup.subgroup}
+                  </div>
+                  {filteredSubgroupItems.map((option: string) => (
+                    <div
+                      key={option}
+                      className={`px-4 py-2 cursor-pointer text-sm text-warm-brown-800 hover:bg-cream-200 flex items-center justify-between ${selectedValues.includes(option) ? 'font-semibold bg-golden-300' : ''}`}
+                      onClick={() => handleSelect(option)}
+                      tabIndex={0}
+                      role="option"
+                      aria-selected={selectedValues.includes(option)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          handleSelect(option);
+                        }
+                      }}
+                    >
+                      {option}
+                      {selectedValues.includes(option) && <span className="text-golden-700">✓</span>}
+                    </div>
+                  ))}
+                </div>
+              );
+            })}
+            
+            {/* No results message */}
+            {(!section.items || filterItems(section.items).length === 0) && 
+             (!section.subgroups || section.subgroups.every(sg => filterItems(sg.items).length === 0)) && (
+              <div className="px-3 py-2 text-sm text-warm-brown-400 text-center" role="option" aria-disabled="true">
+                No results found
+              </div>
+            )}
+          </div>
+          
           {/* Done button to close dropdown */}
           <div className="border-t border-golden-200 p-2">
             <button
@@ -285,7 +349,7 @@ export default function HomePage() {
             <div className="flex items-center space-x-4">
               <img src="/rahul-caterers-logo.png" alt="Rahul Caterers Logo" className="h-12 w-auto" />
               <div className="text-xl font-bold text-golden-800 tracking-wider font-serif text-center drop-shadow-sm">
-                Rahul Caterer's Tasting Event
+                Rahul Caterer's tasting event
               </div>
             </div>
           </nav>
@@ -354,22 +418,44 @@ export default function HomePage() {
           {/* Menu Section */}
           <section id="menu" className="mb-20">
               <div className="text-center mb-12 relative">
-                  <h2 className="text-4xl font-serif text-golden-700 drop-shadow-sm">Prepared with Passion, Delivered With Pride</h2>
+                  <h2 className="text-4xl font-serif text-golden-700 drop-shadow-sm">Prepared with Passion, Delivered with Pride</h2>
                   <p className="text-3xl font-serif text-golden-700 mt-2 m-6"><strong>Our Signature Menu</strong></p>
               </div>
               
-              <div className="max-w-4xl mx-auto bg-white/20 backdrop-blur-lg border border-white/30 rounded-xl shadow-2xl p-8 sm:p-12">
+                  <div className="max-w-4xl mx-auto bg-white/20 backdrop-blur-lg border border-white/30 rounded-xl shadow-2xl p-8 sm:p-12">
                     {eventMenu.map((menuSection, sectionIndex) => (
                         <div key={menuSection.category} className="mb-8 last:mb-0">
                             <h3 className="text-2xl font-serif text-golden-700 text-center mb-6 font-bold drop-shadow-sm">{menuSection.category}</h3>
-                            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-warm-brown-700 text-sm">
-                                {menuSection.items.map((itemName, index) => (
-                                    <li key={index} className="flex items-start group hover:bg-golden-50/50 p-2 rounded-md transition-all duration-200">
-                                        <span className="text-golden-600 mr-3 mt-0.5 flex-shrink-0 group-hover:text-golden-700 transition-colors">◆</span>
-                                        <span className="leading-relaxed group-hover:text-warm-brown-800 transition-colors">{itemName}</span>
-                                    </li>
-                                ))}
-                            </ul>
+                            
+                            {/* Direct items */}
+                            {menuSection.items && (
+                                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-warm-brown-700 text-sm mb-6">
+                                    {menuSection.items.map((itemName, index) => (
+                                        <li key={index} className="flex items-start group hover:bg-golden-50/50 p-2 rounded-md transition-all duration-200">
+                                            <span className="text-golden-600 mr-3 mt-0.5 flex-shrink-0 group-hover:text-golden-700 transition-colors">◆</span>
+                                            <span className="leading-relaxed group-hover:text-warm-brown-800 transition-colors">{itemName}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                            
+                            {/* Subgroups */}
+                            {menuSection.subgroups && menuSection.subgroups.map((subgroup, subIndex) => (
+                                <div key={subgroup.subgroup} className="mb-6">
+                                    <h4 className="text-lg font-semibold text-golden-600 mb-3 capitalize border-b border-golden-300/30 pb-1">
+                                        {subgroup.subgroup}
+                                    </h4>
+                                    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-warm-brown-700 text-sm">
+                                        {subgroup.items.map((itemName, index) => (
+                                            <li key={index} className="flex items-start group hover:bg-golden-50/50 p-2 rounded-md transition-all duration-200">
+                                                <span className="text-golden-600 mr-3 mt-0.5 flex-shrink-0 group-hover:text-golden-700 transition-colors">◆</span>
+                                                <span className="leading-relaxed group-hover:text-warm-brown-800 transition-colors">{itemName}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                            
                             {sectionIndex < eventMenu.length - 1 && (
                                 <div className="border-b border-golden-300/30 mt-8"></div>
                             )}
@@ -426,7 +512,7 @@ export default function HomePage() {
                                     <div key={section.category}>
                                         <div className="font-semibold text-lg text-golden-700 mb-2 block font-serif">{section.category}</div>
                                         <SearchableMultiSelect
-                                            options={section.items}
+                                            section={section}
                                             selectedValues={formData.selectedMenu[section.category] || []}
                                             onChange={(newSelection) => handleMultiSelectChange(section.category, newSelection)}
                                             placeholder={`Search and select in ${section.category}...`}
