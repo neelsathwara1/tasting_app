@@ -145,7 +145,7 @@ export const eventMenu: MenuSection[] = [
         ]
       },
       {
-        subgroup: "Fresh Fruit Ice-Cream with Donut",
+        subgroup: "Fresh Fruit Ice-Cream with Doughnut",
         items: [
           "Customizable"
         ]
