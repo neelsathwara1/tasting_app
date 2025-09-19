@@ -22,14 +22,14 @@ export const eventMenu: MenuSection[] = [
     ]
   },
   {
-    category: "JUICES",
+    category: "Juices",
     items: [
       "World Vision", "Pahadi Juice", "Cinderella Juice", "Peru Plaza", "Fantasy", 
       "Orange Basil", "Kiwi Pineapple", "Ginger Juice", "All-rounder"
     ]
   },
   {
-    category: "FL. Starter",
+    category: "Floating Starters",
     items: [
       "Veg. Cigar Roll with Mayo Dips", "D Volvo", "Paneer Shashlik with Green Chutney", 
       "Cheese Paneer Ball with Mayo Dips"
@@ -45,12 +45,12 @@ export const eventMenu: MenuSection[] = [
   {
     category: "Chaat Items",
     items: [
-      "Tikki Based Chaat", "Dry Fruit Makhana Chaat", "Rassile Dahi Bhalla", 
+      "Vrindavan tikki Chaat", "Dry Fruit Makhana Chaat", "Rassile Dahi Bhalla", 
       "Palak Patta Kurkure Chaat"
     ]
   },
   {
-    category: "SOUTH INDIAN",
+    category: "South Indian",
     items: [
       "Masala Dosa", "Mysore Masala Dosa", "Green Garlic Khakhra Dosa", "Ghotala Paper Dosa", 
       "Cheese Palak Dosa", "Khakhra Dosa", "Jini Roll Dosa", "Schezwan Dosa", 
@@ -70,7 +70,7 @@ export const eventMenu: MenuSection[] = [
     ]
   },
   {
-    category: "SALAD BAR",
+    category: "Salad Bar",
     items: [
       "Sweet Pickle", "Nimbu Pickle", "Mixed Pickle", "Bombay Hot Salad", "Green Salad", 
       "Cream Salad", "Russian Salad", "Macaroni Salad", "Onion & Lemon", "Kimchi Salad", 
@@ -120,10 +120,10 @@ export const eventMenu: MenuSection[] = [
     category: "Dessert",
     subgroups: [
       {
-        subgroup: "ice creams",
+        subgroup: "Ice-Creams",
         items: [
-          "Rajbhog Ice Cream", "Blue Diamond Ice Cream", "Golden Pearl Ice Cream", 
-          "Almond Carnival Ice Cream", "Pistachio Ice Cream", "Belgian Chocolate Ice Cream"
+          "Rajbhog Ice-Cream", "Blue Diamond Ice-Cream", "Golden Pearl Ice-Cream", 
+          "Almond Carnival Ice-Cream", "Pistachio Ice-Cream", "Belgian Chocolate Ice-Cream"
         ]
       },
       {
@@ -139,9 +139,15 @@ export const eventMenu: MenuSection[] = [
         ]
       },
       {
-        subgroup: "Sandwich Ice Cream",
+        subgroup: "Sandwich Ice-Cream",
         items: [
           "Rajbhog", "Chocolate"
+        ]
+      },
+      {
+        subgroup: "Fresh Fruit Ice-Cream with Donut",
+        items: [
+          "Customizable"
         ]
       }
     ]

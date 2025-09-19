@@ -370,9 +370,6 @@ export default function HomePage() {
               <h3 className="text-3xl sm:text-4xl font-serif text-golden-700 font-bold m-8">
                 A Special Evening of Flavours
               </h3>
-              {/* <p className="text-lg text-warm-brown-700 font-body leading-relaxed">
-                Hello Food Lovers, We’re Excited To Invite You To Our Exclusive Food Tasting Event, Where Every Bite Tells A Story! Come, Explore Our Menu, Enjoy Our Signature Dishes & Help Us Make Your Next Event Truly Unforgettable. on 20th September 2025 6.30 pm onwards.
-              </p> */}
                 <p className="text-xl font-serif text-warm-brown-700">
                     <strong>Hello Food Lovers,</strong>
                 </p>
@@ -456,9 +453,9 @@ export default function HomePage() {
                                 </div>
                             ))}
                             
-                            {sectionIndex < eventMenu.length - 1 && (
+                            {/* {sectionIndex < eventMenu.length - 1 && (
                                 <div className="border-b border-golden-300/30 mt-8"></div>
-                            )}
+                            )} */}
                         </div>
                     ))}
               </div>

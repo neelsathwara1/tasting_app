@@ -36,7 +36,7 @@
 - Ginger Juice
 - All-rounder
 
-# FL. Starter
+# Floating Starters
 - Veg. Cigar Roll with Mayo Dips
 - D Volvo
 - Paneer Shashlik with Green Chutney
@@ -49,7 +49,7 @@
 - Minestrone Soup with Macaroni
 
 # Chaat Items
-- Tikki Based Chaat
+- Vrindavan tikki Chaat
 - Dry Fruit Makhana Chaat
 - Rassile Dahi Bhalla
 - Palak Patta Kurkure Chaat
@@ -150,6 +150,8 @@
 ## Sandwich Ice Cream
 - Rajbhog
 - Chocolate
+## Fresh Fruit IceCream with Donut
+- customizable
 
 # Others
 - Mouth Freshener
